@@ -1,3 +1,18 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: welcome.php");
+    exit;
+}
+ 
+// Include config file
+require_once "config.php";
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +73,10 @@
                 <a title="Facebook" href="https://facebbok.com/themefisher.com">
                   <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
                 </a>
-                <a title="Instagram" href="https://www.instagram.com/happinessmerchh/">
+                <a title="Twitter" href="https://twitter.com/themefisher.com">
+                  <span class="social-icon"><i class="fab fa-twitter"></i></span>
+                </a>
+                <a title="Instagram" href="https://instagram.com/themefisher.com">
                   <span class="social-icon"><i class="fab fa-instagram"></i></span>
                 </a>
 
@@ -115,7 +133,7 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
                   </ul>
                   <div>
-                    <a class="btn btn-primary" href="login.php">Iniciar sesión</a>
+                    <a>Hola, $nom</a>
                   </div>
               </nav>
             </div>
